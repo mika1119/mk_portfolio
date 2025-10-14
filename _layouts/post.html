@@ -1,0 +1,63 @@
+---
+layout: default
+---
+
+<article class="post">
+  {% if page.demo %}
+    <div class="post__title">{{ page.title | escape }}（架空サイト）</div>
+  {% else %}
+    <div class="post__title">{{ page.title | escape }} 様</div>
+  {% endif %}
+  <img src="{{ page.thumbnail | relative_url }}" class="post__thumbnail" alt="{{ page.title }}のサムネイル">
+  
+  <div class="post-contents">
+    <aside class="post-contents__meta">
+      <dl class="post-contents__list">
+        <div class="post-contents__item">
+          <dt>種別</dt>
+          <dd>
+            {% if page.demo %}
+              架空サイト
+            {% else %}
+              実案件
+            {% endif %}
+          </dd>
+        </div>
+
+        <div class="post-contents__item">
+          <dt>URL</dt>
+          <dd>
+            {% if page.site_url %}
+              <a href="{{ page.site_url }}" class="post-contents__link" target="_blank" rel="noopener">{{ page.site_url }}</a>
+            {% endif %}
+          </dd>
+        </div>
+
+        <div class="post-contents__item">
+          <dt>技術</dt>
+          <dd class="post-contents__tags">
+            {% for tag in page.tags %}
+              <span class="post-contents__tag">{{ tag }}</span>
+            {% endfor %}
+          </dd>
+        </div>
+      </dl>
+    </aside>
+
+    <div class="post-contents__body">
+      {{ content | markdownify }}
+    </div>
+  </div>
+
+  <nav class="post-nav">
+    {% if page.previous %}
+      <a class="post-nav__prev" href="{{ page.previous.url | relative_url }}">← {{ page.previous.title }}</a>
+    {% endif %}
+
+    {% if page.next %}
+      <a class="post-nav__next" href="{{ page.next.url | relative_url }}">{{ page.next.title }} →</a>
+    {% endif %}
+  </nav>
+
+  {% include link_button.html link="works" link_name="一覧へ戻る" %}
+</article>

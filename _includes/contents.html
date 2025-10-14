@@ -1,0 +1,6 @@
+<div class="contents">
+  <img src="{{ include.image | relative_url }}" class="contents__image" alt="{{ include.alt }}">
+  <div class="contents__text" data-aos="fade-up">
+    {{ include.text | markdownify }}
+  </div>
+</div>

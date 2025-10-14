@@ -1,0 +1,11 @@
+.text {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  color: $primary_color;
+  line-height: 2.6rem;
+  margin: 6vh auto 0;
+  & p + p {
+    margin: 20px 0 0 0;
+  }
+}

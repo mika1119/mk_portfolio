@@ -1,0 +1,11 @@
+<div class="circle-chart">
+  {% assign step = 150 %} 
+  {% for skill in include.skills %}
+    {% assign delay = forloop.index0 | times: step %}
+    <div class="circle-item" style="--val:{{ skill.val }}; --color:{{ skill.color }}; --delay: {{ delay }}ms;" data-aos="fade-up" data-aos-delay="{{ delay }}">
+      <span class="circle-item__meter"></span>
+      <span class="circle-item__percent">{{ skill.val }}%</span>
+      <span class="circle-item__label">{{ skill.label }}</span>
+    </div>
+  {% endfor %}
+</div>

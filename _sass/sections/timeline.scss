@@ -1,0 +1,74 @@
+.timeline {
+  width: 100%;
+  height: auto;
+  margin: 4vh 0;
+  &__list {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
+    position: relative;
+    padding: 4vh 0;
+    @include max_width;
+    &::before {
+      content: "";
+      width: 4px;
+      background-color: $secondary_color;
+      position: absolute;
+      inset: 0 0 0 20px;
+      transform: translateX(-50%);
+      border-radius: 1000px;
+      z-index: -100;
+      @include display_md {
+        inset: 0 auto 0 50%;
+      }
+    }
+  } 
+}
+
+.timeline-item {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+  @include display_md {
+    width: 53%;
+  }
+  &::before {
+    content: "●";
+    font-size: 4rem;
+    color: var(--color);
+    @include display_md {
+      font-size: 4.5rem;
+    }
+  }
+  &:nth-last-of-type(odd) {
+    @include display_md {
+      margin-left: auto;
+    }
+  }
+  &:nth-last-of-type(even) {
+    @include display_md {
+      flex-direction: row-reverse;
+      margin-right: auto;
+    }
+  }
+  &__text {
+    width: 100%;
+    height: auto;
+    background-color: color-mix(in oklab, var(--color), white 70%);
+    border-radius: 1rem;
+    box-shadow: 2px 2px 6px $light_gray;
+    margin: 0 1rem 0 0;
+    padding: clamp(18px, 2.6vw, 24px);
+    @include display_md {
+      margin: 0;
+    }
+    & p:first-child {
+      font-weight: 600;
+      padding: 0 0 1rem 0;
+    }
+  }
+}

@@ -1,0 +1,83 @@
+.post {
+  width: 100%;
+  max-width: 920px;
+  height: auto;
+  display: grid;
+  gap: 4vh;
+  margin: 0 auto;
+  padding: 6vh 4vw 20vh;
+  &__title {
+    font-size: clamp(2rem, 4vw, 2.4rem);
+    font-weight: 600;
+  }
+  &__thumbnail {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+}
+
+.post-contents {
+  display: grid;
+  gap: 4vh;
+  @include display_md {
+    grid-template-columns: 40% 1fr;
+  }
+  &__meta {
+    width: 100%;
+    height: auto;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: $secondary_color;
+    border-radius: 1.2rem;
+    padding: 1.6rem;
+    @include display_md {
+      position: sticky;
+      top: 16vh;
+    }
+  }
+  &__item {
+    & dt {
+      font-weight: 600;
+      line-height: 3.2rem;
+    }
+  }
+  &__link {
+    text-decoration: underline;
+    word-break: break-all;
+  }
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  &__tag {
+    font-size: 1.2rem;
+    background-color: color-mix(in oklab, $primary_color, white 88%);
+    border-radius: 0.4rem;
+    padding: 0.4rem 1.2rem;
+  }
+  &__body {
+    line-height: 3.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    & video {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.post-nav {
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  display: flex;
+  justify-content: space-between;
+  margin: 4vh 0;
+  &__next {
+    margin-left: auto;
+  }
+}

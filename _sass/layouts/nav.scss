@@ -1,0 +1,71 @@
+.nav {
+  width: 100%;
+  height: auto;
+  &__toggle {
+    display: none;
+    &:checked ~ {
+      & .nav__button span {
+        &:nth-child(1){ transform: translateY(10px) rotate(225deg); }
+        &:nth-child(2){ opacity: 0; }
+        &:nth-child(3){ transform: translateY(-10px) rotate(-225deg); }
+      }
+      & .nav {
+        &__list { transform: translateX(0); }
+      }
+    }
+  }
+  &__button {
+    width: 28px;
+    height: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    & span {
+      display: block;
+      height: 2px;
+      background: $white;
+      transition: transform 0.3s ease;
+    }
+    @include display_md {
+      display: none;
+    }
+  }
+  &__list {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    position: fixed;
+    inset: 12vh auto 0 0;
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+    z-index: 900;
+    @include display_md {
+      flex-direction: row;
+      justify-content: flex-end;
+      background-color: transparent;
+      position: static;
+      transform: none;
+    }
+  }
+  &__item {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid $light_gray;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 20px;
+    @include display_md {
+      border-bottom: none;
+      color: $white;
+    }
+    &:hover {
+      background-color: $secondary_color;
+      @include display_md {
+        background-color: transparent;
+        color: $secondary_color;
+      }
+    }
+  }
+}

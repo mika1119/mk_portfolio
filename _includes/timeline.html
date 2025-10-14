@@ -1,0 +1,12 @@
+<div class="timeline">
+  <ul class="timeline__list">
+    {% for item in page.timeline %}
+      <li class="timeline-item" style="--color: {{ item.color }};" data-aos="fade-up">
+        <div class="timeline-item__text">
+          <p>{{ item.date }}</p>
+          <p>{{ item.text | markdownify }}</p>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

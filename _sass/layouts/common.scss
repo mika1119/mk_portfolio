@@ -1,0 +1,59 @@
+/* common
+------------------------------- */
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+  text-align: justify;
+}
+
+body {
+  font-size: 1.6rem;
+  color: $text_color;
+  background-color: $bg_color;
+}
+
+a {
+  color: $text_color;
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+section {
+  width: 100%;
+  height: auto;
+}
+
+.home {
+  width: 100%;
+  height: auto;
+  display: grid;
+  gap: 10vh;
+  padding: 10vh 4vw 14vh;
+  @include display_md {
+    gap: 14vh;
+  }
+}
+
+.page {
+  width: 100%;
+  height: auto;
+  display: grid;
+  gap: 10vh;
+  padding: 10vh 4vw 14vh;
+  @include display_md {
+    gap: 14vh;
+  }
+}

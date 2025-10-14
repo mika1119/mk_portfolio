@@ -1,0 +1,61 @@
+.form {
+  width: 100%;
+  height: auto;
+  display: grid;
+  gap: 2rem;
+  @include max_width;
+  &__item {
+    display: grid;
+    @include display_md {
+      grid-template-columns: auto 72%;
+    }
+  }
+  &__label {
+    font-weight: 600;
+    color: $primary_color;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 0 4px 0;
+    @include display_md {
+      padding: 0;
+    }
+    &_required {
+      &::after {
+        content: "必須";
+        font-size: 1.2rem;
+        color: $white;
+        background-color: red;
+        border-radius: 4px;
+        padding: 2px 8px;
+      }
+    }
+  }
+  &__field {
+    border: 1px solid $primary_color;
+    border-radius: 6px;
+    resize: vertical;
+    padding: 10px;
+    &::placeholder {
+      color: $secondary_color;
+    }
+  }
+  &__submit {
+    width: 100%;
+    height: auto;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 1rem;
+    color: $primary_color;
+    background-color: $white;
+    border: 1px solid $primary_color;
+    border-radius: 6px;
+    transition: all 0.4s ease;
+    margin: 4vh 0;
+    padding: 10px 0;
+    &:hover {
+      color: $white;
+      background-color: $primary_color;
+    }
+  }
+}

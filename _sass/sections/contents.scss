@@ -1,0 +1,45 @@
+.contents {
+  width: 100%;
+  height: auto;
+  display: grid;
+  gap: 6vw;
+  padding: 60px 0;
+  @include max_width;
+  @include display_sm {
+    grid-template-columns: 1fr 1fr;
+    gap: 4vw;
+  }
+  &__image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    display: block;
+    object-fit: cover;
+    object-position: center 30%;
+    filter: brightness(95%);
+    @include display_sm {
+      grid-area: image;
+    }
+  }
+  &__text {
+    color: $primary_color;
+    line-height: 2.6rem;
+    letter-spacing: 0.1rem;
+    & p + p {
+      margin: 20px 0 0 0;
+    }
+    @include display_sm {
+      grid-area: text;
+    }
+  }
+}
+
+@include display_sm {
+  section {
+    &:nth-of-type(odd) .contents {
+      grid-template-areas: "image text";
+    }
+    &:nth-of-type(even) .contents {
+      grid-template-areas: "text image";
+    }
+  }
+}
