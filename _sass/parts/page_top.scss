@@ -1,6 +1,6 @@
 .page-top {
-  width: 8vh;
-  height: 8vh;
+  width: 6vh;
+  height: 6vh;
   position: fixed;
   right: 20px;
   bottom: 20px;
@@ -9,10 +9,14 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  z-index: 800;
   background-color: $primary_color;
   opacity: 0;
   transition: opacity 0.6s ease;
+  z-index: 800;
+  @include display_md {
+    width: 8vh;
+    height: 8vh;
+  }
   &.is-visible {
     opacity: 0.2;
     &:hover {

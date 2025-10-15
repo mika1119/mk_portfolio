@@ -38,7 +38,7 @@
     flex-direction: column;
     background-color: $white;
     position: fixed;
-    inset: 12vh auto 0 0;
+    inset: 10vh auto 0 0;
     transform: translateX(100%);
     transition: transform 0.4s ease;
     z-index: 900;
@@ -59,6 +59,7 @@
     @include display_md {
       border-bottom: none;
       color: $white;
+      padding: 0 0 0 40px;
     }
     &:hover {
       background-color: $secondary_color;
