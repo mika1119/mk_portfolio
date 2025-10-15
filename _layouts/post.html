@@ -3,11 +3,18 @@ layout: default
 ---
 
 <article class="post">
-  {% if page.demo %}
-    <div class="post__title">{{ page.title | escape }}（架空サイト）</div>
-  {% else %}
-    <div class="post__title">{{ page.title | escape }} 様</div>
-  {% endif %}
+  <div class="post__header">
+    {% if page.demo %}
+      <div class="post__title">{{ page.title | escape }}（架空サイト）</div>
+    {% else %}
+      <div class="post__title">{{ page.title | escape }} 様</div>
+    {% endif %}
+
+    <div class="link">
+      <a href="{{ page.site_url | relative_url }}" class="link__button" target="_blank" rel="noopener">サイトを見る</a>
+    </div>
+  </div>
+
   <img src="{{ page.thumbnail | relative_url }}" class="post__thumbnail" alt="{{ page.title }}のサムネイル">
   
   <div class="post-contents">

@@ -6,9 +6,22 @@
   gap: 4vh;
   margin: 0 auto;
   padding: 6vh 4vw 20vh;
+  &__header {
+    display: grid;
+    gap: 2vh;
+    @include display_sm {
+      grid-template-columns: 1fr 24%;
+      align-items: center;
+    }
+  }
   &__title {
     font-size: clamp(2rem, 4vw, 2.4rem);
     font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+    @include display_sm {
+      text-align: initial;
+    }
   }
   &__thumbnail {
     width: 100%;
