@@ -1,0 +1,15 @@
+.thanks {
+  width: 100%;
+  height: auto;
+  padding: 0 0 10vh 0;
+  &__image {
+    text-align: center;
+    color: $primary-color;
+  }
+  &__title {
+    font-size: 2.4rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 2vh 0;
+  }
+}
