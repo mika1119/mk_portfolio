@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
-  // page_top
+  // page top fixed
   const topBtn = document.getElementById("pageTop");
   const footer = document.getElementById("footer");
 
-  window.addEventListener("scroll", () => {
+  const updatePageTop = () => {
     const footerRect = footer.getBoundingClientRect();
     const windowHeight = window.innerHeight;
 
@@ -19,7 +19,13 @@ document.addEventListener("DOMContentLoaded", function() {
       topBtn.style.position = "fixed";
       topBtn.style.bottom = "20px";
     }
-  });
+  };
+
+  // リロード時に実行
+  updatePageTop();
+
+  // スクロール時に実行
+  window.addEventListener("scroll", updatePageTop);
 
   topBtn.addEventListener("click", () => {
     window.scroll({ top: 0, behavior: "smooth" });

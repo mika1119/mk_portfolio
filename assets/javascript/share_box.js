@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const shareBtn = document.getElementById("shareBox");
   const footer = document.getElementById("footer");
 
-  window.addEventListener("scroll", () => {
+  const updateShareBox = () => {
     const footerRect = footer.getBoundingClientRect();
     const windowHeight = window.innerHeight;
 
@@ -19,7 +19,13 @@ document.addEventListener("DOMContentLoaded", function() {
       shareBtn.style.position = "fixed";
       shareBtn.style.bottom = "20px";
     }
-  });
+  };
+
+  // リロード時に実行
+  updateShareBox();
+
+  // スクロール時に実行
+  window.addEventListener("scroll", updateShareBox);
 
   shareBtn.addEventListener("click", () => {
     shareBtn.classList.toggle("is-open");
