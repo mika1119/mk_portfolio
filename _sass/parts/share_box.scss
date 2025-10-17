@@ -1,16 +1,16 @@
 .share-box {
   width: auto;
-  height: 6vh;
+  height: $sm-size;
   display: flex;
   position: fixed;
   bottom: 20px;
-  left: -6vh;
+  left: -$sm-size;
   box-shadow: 0 4px 6px 1px rgba(0, 0, 0, 0.2);
   opacity: 0;
   transition: opacity 0.6s ease-in-out, left 0.6s ease-in-out;
   @include display_md {
-    height: 8vh;
-    left: -8vh;
+    height: $md-size;
+    left: -$md-size;
   }
   &.is-visible {
     opacity: 1;
@@ -21,13 +21,13 @@
 }
 
 .sns-icon {
-  width: 6vh;
-  height: 6vh;
+  width: $sm-size;
+  height: $sm-size;
   background-color: $white;
   padding: 1rem;
   @include display_md {
-    width: 8vh;
-    height: 8vh;
+    width: $md-size;
+    height: $md-size;
   }
   &__image {
     width: 100%;
@@ -37,13 +37,13 @@
 }
 
 .share-icon {
-  width: 6vh;
-  height: 6vh;
+  width: $sm-size;
+  height: $sm-size;
   background-color: $primary_color;
   padding: 1rem;
   @include display_md {
-    width: 8vh;
-    height: 8vh;
+    width: $md-size;
+    height: $md-size;
   }
   &__svg {
     width: 100%;
