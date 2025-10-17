@@ -1,0 +1,22 @@
+.list {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: grid;
+  gap: 6vw;
+  margin: 0 auto;
+  padding: 6vh 0 0;
+  &__title {
+    font-size: 2rem;
+    color: $primary_color;
+    margin: 0 0 1rem 0;
+    &::before {
+      content: "◆";
+      color: $secondary_color;
+      padding: 0 1rem 0 0;
+    }
+  }
+  &__desc {
+    padding: 0 4%;
+  }
+}

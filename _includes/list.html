@@ -1,0 +1,8 @@
+<ul class="list">
+  {% for item in page.services %}
+    <li class="list__item">
+      <div class="list__title">{{ item.title }}</div>
+      <div class="list__desc" data-aos="fade-right">{{ item.desc }}</div>
+    </li>
+  {% endfor %}
+</ul>

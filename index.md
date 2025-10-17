@@ -5,6 +5,20 @@
 layout: home
 title: HOME
 
+services:
+  - title: "WEBサイト制作"
+    desc: "Railsなどの動的サイトから、Jekyllなどの静的サイトまで、目的に合わせた構築が可能です。"
+  - title: "WEBアプリの設計・開発"
+    desc: "業務支援や顧客管理など、日常業務を効率化する小規模アプリを開発します。"
+  - title: "サーバ環境構築"
+    desc: "Nginxによる環境構築やデプロイ設定など、公開までの技術的部分も対応します。"
+  - title: "画像加工・素材調整"
+    desc: "WEB掲載用の写真やバナーの調整など、サイト全体の印象を整えます。"
+  - title: "導入サポート"
+    desc: "ドメイン取得、サーバ設定、運用まで、初めての方でも安心してスタートできるよう支援します。"
+  - title: "保守・更新対応"
+    desc: "公開後のテキスト修正や軽微な調整など、長く使えるサイト運営をサポートします。"
+
 about_text: |
   福岡を拠点に、WEBサイトの制作やWEBアプリケーションの開発を行っています。
 
@@ -25,6 +39,11 @@ contact_text: |
 
   ちょっとしたご相談からでも大歓迎です。お気軽にご連絡ください。
 ---
+
+<section>
+  {% include title.html main_title="SERVICE" sub_title="できること" %}
+  {% include list.html %}
+</section>
 
 <section>
   {% include title.html main_title="ABOUT" sub_title="自己紹介" %}

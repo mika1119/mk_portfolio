@@ -36,10 +36,10 @@
 @include display_sm {
   section {
     &:nth-of-type(odd) .contents {
-      grid-template-areas: "image text";
+      grid-template-areas: "text image";
     }
     &:nth-of-type(even) .contents {
-      grid-template-areas: "text image";
+      grid-template-areas: "image text";
     }
   }
 }
