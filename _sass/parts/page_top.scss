@@ -1,6 +1,6 @@
 .page-top {
-  width: $sm-size;
-  height: $sm-size;
+  width: $fixed-size;
+  height: $fixed-size;
   position: fixed;
   right: 20px;
   bottom: 20px;
@@ -13,10 +13,6 @@
   opacity: 0;
   transition: opacity 0.6s ease;
   z-index: 800;
-  @include display_md {
-    width: $md-size;
-    height: $md-size;
-  }
   &.is-visible {
     opacity: 0.2;
     &:hover {
