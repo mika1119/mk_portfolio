@@ -4,15 +4,19 @@ layout: default
 
 <article class="post">
   <div class="post__header">
-    {% if page.demo %}
+    {% if page.app %}
+      <div class="post__title">{{ page.title | escape }}（システム開発）</div>
+    {% elsif page.demo %}
       <div class="post__title">{{ page.title | escape }}（架空サイト）</div>
     {% else %}
       <div class="post__title">{{ page.title | escape }} 様</div>
     {% endif %}
 
-    <div class="link">
-      <a href="{{ page.site_url | relative_url }}" class="link__button" target="_blank" rel="noopener">サイトを見る</a>
-    </div>
+    {% if page.site_url %}
+      <div class="link">
+        <a href="{{ page.site_url | relative_url }}" class="link__button" target="_blank" rel="noopener">サイトを見る</a>
+      </div>
+    {% endif %}
   </div>
 
   <img src="{{ page.thumbnail | relative_url }}" class="post__thumbnail" alt="{{ page.title }}のサムネイル">
@@ -23,7 +27,9 @@ layout: default
         <div class="post-contents__item">
           <dt>種別</dt>
           <dd>
-            {% if page.demo %}
+            {% if page.app %}
+              システム開発
+            {% elsif page.demo %}
               架空サイト
             {% else %}
               実案件
@@ -32,12 +38,12 @@ layout: default
         </div>
 
         <div class="post-contents__item">
+          {% if page.site_url %}
           <dt>URL</dt>
           <dd>
-            {% if page.site_url %}
-              <a href="{{ page.site_url }}" class="post-contents__link" target="_blank" rel="noopener">{{ page.site_url }}</a>
-            {% endif %}
+            <a href="{{ page.site_url }}" class="post-contents__link" target="_blank" rel="noopener">{{ page.site_url }}</a>
           </dd>
+          {% endif %}
         </div>
 
         <div class="post-contents__item">

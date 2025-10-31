@@ -4,7 +4,9 @@
       <li class="card__item" data-aos="fade-up" data-aos-delay="{{ forloop.index | times: 400 }}">
         <a href="{{ post.url | relative_url }}" class="card__link">
           <img src="{{ post.thumbnail | relative_url }}" class="card__thumbnail" alt="{{ post.title }}のサムネイル">
-          {% if post.demo %}
+          {% if post.app %}
+            <div class="card__title">{{ post.title }}（システム開発）</div>
+          {% elsif post.demo %}
             <div class="card__title">{{ post.title }}（架空サイト）</div>
           {% else %}
             <div class="card__title">{{ post.title }} 様</div>
