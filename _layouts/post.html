@@ -38,12 +38,14 @@ layout: default
         </div>
 
         <div class="post-contents__item">
-          {% if page.site_url %}
           <dt>URL</dt>
           <dd>
-            <a href="{{ page.site_url }}" class="post-contents__link" target="_blank" rel="noopener">{{ page.site_url }}</a>
+            {% if page.site_url %}
+              <a href="{{ page.site_url }}" class="post-contents__link" target="_blank" rel="noopener">{{ page.site_url }}</a>
+            {% else %}
+              非公開
+            {% endif %}
           </dd>
-          {% endif %}
         </div>
 
         <div class="post-contents__item">
