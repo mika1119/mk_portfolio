@@ -2,6 +2,8 @@ import "./page_top.js";
 import "./share_box.js";
 
 // AOS
-AOS.init({
-  duration: 1000,
-});
+window.addEventListener("DOMContentLoaded", function() {
+  AOS.init({
+    duration: 1000,
+  });
+})

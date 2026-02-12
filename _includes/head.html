@@ -3,11 +3,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {%- seo -%}
+
   <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-  <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" media="print" onload="this.media='all'">
+
+  <!-- Googleフォント事前接続 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Googleフォント読み込み -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" as="style" fetchpriority="high">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" media="print" onload="this.media='all'">
+
   <script type="module" src="{{ "/assets/javascript/main.js" | relative_url }}"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
   {%- feed_meta -%}
   {% include favicon.html %}
   {% include google_tag.html %}

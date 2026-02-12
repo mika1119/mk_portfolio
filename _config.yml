@@ -33,6 +33,7 @@ url: "https://mika1119.github.io" # the base hostname & protocol for your site, 
 plugins:
   - jekyll-seo-tag
   - jekyll-feed
+  - jekyll-sitemap
 
 header_pages:
   - index.md
